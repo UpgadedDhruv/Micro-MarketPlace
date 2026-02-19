@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  baseURL: 'https://micro-market-place-backend.vercel.app/api',
 });
 
 export default apiClient;
