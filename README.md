@@ -387,33 +387,8 @@ Response:
 
 ---
 
-## 7. Deploying on Vercel
 
-You can deploy the web and backend as separate Vercel projects.
 
-### Web (recommended)
-
-1. In Vercel, create a new project.
-2. Set the project root to the `web/` directory.
-3. Build command: `npm run build`
-4. Output directory: `dist`
-5. Add an environment variable if your backend is not on `http://localhost:4000` and update `web/src/utils/apiClient.js` accordingly.
-
-### Backend (Node server)
-
-1. In Vercel, create a separate project with root set to `backend/`.
-2. Ensure the `NODE_VERSION` (if configured) is compatible with your local Node.
-3. Configure environment variables:
-   - `MONGODB_URI`
-   - `JWT_SECRET`
-   - `PORT` (Vercel will provide a port; you can ignore or map as needed)
-4. Vercel will run:
-   - `npm install`
-   - `npm start`
-
-The backend uses a plain Node.js `start` command (`node src/server.js`) and does not rely on nodemon, so it is suitable for Vercel production deployment.
-
----
 
 ## 8. Seed script and test credentials (quick reference)
 
