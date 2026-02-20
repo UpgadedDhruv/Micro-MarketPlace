@@ -2,8 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import authRoutes from './routes/auth.js';
 import productRoutes from './routes/products.js';
+import { connectMongo } from './db.js';
 
 const app = express();
+
+connectMongo().catch((err) => {
+  console.error('MongoDB connection error', err);
+});
 
 app.use(cors());
 app.use(express.json());
@@ -22,4 +27,3 @@ app.use((err, req, res, next) => {
 });
 
 export default app;
-
